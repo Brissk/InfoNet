@@ -2,28 +2,40 @@ package Model;
 
 import Core.Company;
 import Core.Employee;
+import Core.IDCreator;
 import UI.View;
 
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 
-public class Model implements IModel{
+public class Model implements IModel {
     Company company;
-    public Model(){
+    IDCreator idCreator ;
+
+    public Model() {
 
         company = new Company();
+        idCreator = new IDCreator();
     }
 
     @Override
-    public Company setStaffCompany(String data) {
+    public Company setCompanyStaff(String data) {
         String[] s = data.split(";");
-
-        return null;
+//        System.out.println(s.length);
+//        for (String ss: s) {
+//            System.out.println(ss);
+//        }
+        for (int i = 0; i < s.length; i += 4) {
+            Employee emp = new Employee(idCreator.getId(), s[i], s[i + 1], s[i + 2], s[i + 3]);
+            company.listOfEmployees.add(emp);
+        }
+        return company;
     }
 
     @Override
     public String getCompanyStaff(Employee employee) {
+
         return null;
     }
 

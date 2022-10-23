@@ -8,7 +8,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 
 public interface IModel {
-    public Company setStaffCompany(String data);
+    public Company setCompanyStaff(String data);
     public String getCompanyStaff(Employee employee);
     public ArrayList<Employee> getEmployeeList();
     public void myImport() throws IOException, ParseException;

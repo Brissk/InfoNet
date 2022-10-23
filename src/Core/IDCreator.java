@@ -1,7 +1,7 @@
 package Core;
 
 public class IDCreator {
-    Integer id;
+    Integer id = 0;
     public IDCreator(){
         super();
     }

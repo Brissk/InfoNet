@@ -13,25 +13,31 @@ public class View implements IView{
     }
     @Override
     public String getEmployeeData(){
+        System.out.print("Введите количество сотрудников для добавления: ");
+        int quantity = in.nextInt();
         StringBuilder sb = new StringBuilder();
-        System.out.println("Введите имя: ");
-        sb.append(in.nextLine());
-        System.out.println("Введите фамилию: ");
-        sb.append(in.nextLine());
-        System.out.println("Введите телефон: ");
-        sb.append(in.nextLine());
-        System.out.println("Введите зарплату: ");
-        sb.append(in.nextLine());
+        for (int i = 0; i < quantity; i++)
+        {
+            System.out.print("Введите имя: ");
+            sb.append(in.nextLine()).append(";");
+            System.out.print("Введите фамилию: ");
+            sb.append(in.nextLine()).append(";");
+            System.out.print("Введите телефон: ");
+            sb.append(in.nextLine()).append(";");
+            System.out.print("Введите зарплату: ");
+            sb.append(in.nextLine()).append(";");
+        }
         return sb.toString();
     }
 
     @Override
-    public String viewAllEmployees(ArrayList<Employee> employees) {
+    public String viewAllEmployees(ArrayList<Employee> employees){
+        StringBuilder sb = new StringBuilder();
         for (Employee e: employees
-             ) {
-            System.out.println(e);
+        ) {
+            sb.append(e).append("\n");
         }
-        return "";
+        return sb.toString();
     }
 
 
